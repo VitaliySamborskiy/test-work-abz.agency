@@ -1,5 +1,5 @@
 import "./scss/varible.scss";
-import { Header, HeroSection } from "./components/components.tsx";
+import { Header, HeroSection, StaffProfiles } from "./components/components.tsx";
 
 function App() {
 	return (
@@ -7,6 +7,7 @@ function App() {
 			<Header />
 			<main>
 				<HeroSection />
+				<StaffProfiles />
 			</main>
 		</>
 	);

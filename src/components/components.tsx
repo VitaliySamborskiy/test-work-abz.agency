@@ -1,3 +1,5 @@
 export { HeroSection } from "./hero/heroSection.tsx";
 export { Header } from "./header/header.tsx";
 export { BaseButton } from "./button/baseButton.tsx";
+export { StaffProfiles } from "./staff-profiles/staffProfiles.tsx";
+export { Card } from "./card/card.tsx";
