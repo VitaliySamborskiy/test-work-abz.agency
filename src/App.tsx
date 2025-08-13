@@ -1,7 +1,8 @@
 import "./scss/varible.scss";
+import { Header } from "./components/header/header.tsx";
 
 function App() {
-	return <></>;
+	return <Header />;
 }
 
 export default App;
