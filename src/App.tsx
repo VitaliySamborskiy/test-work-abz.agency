@@ -1,8 +1,15 @@
 import "./scss/varible.scss";
-import { Header } from "./components/header/header.tsx";
+import { Header, HeroSection } from "./components/components.tsx";
 
 function App() {
-	return <Header />;
+	return (
+		<>
+			<Header />
+			<main>
+				<HeroSection />
+			</main>
+		</>
+	);
 }
 
 export default App;
