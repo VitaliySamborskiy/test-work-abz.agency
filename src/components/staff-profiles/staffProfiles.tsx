@@ -23,14 +23,6 @@ const StaffProfiles: React.FC = () => {
 		return result.users;
 	};
 
-	useEffect(() => {
-		apiRequest<ResponseUsersType>({ endpoint: "/users", params: { count: 6 } }).then(
-			(response): void => {
-				setUsers(handleApiResponse(response));
-			}
-		);
-	}, []);
-
 	const handleLoadPage = () => {
 		apiRequest<ResponseUsersType>({
 			endpoint: "/users",
@@ -40,9 +32,17 @@ const StaffProfiles: React.FC = () => {
 		});
 	};
 
+	useEffect(() => {
+		apiRequest<ResponseUsersType>({ endpoint: "/users", params: { count: 6 } }).then(
+			(response): void => {
+				setUsers(handleApiResponse(response));
+			}
+		);
+	}, []);
+
 	return (
-		<section>
-			<h2>Working with GET request</h2>
+		<section className={`${style.staffSection} container`}>
+			<h2 className={style.title}>Working with GET request</h2>
 			<div className={style.bodyCards}>
 				{users?.map(item => (
 					<Card
@@ -56,6 +56,7 @@ const StaffProfiles: React.FC = () => {
 				type={"submit"}
 				onClick={handleLoadPage}
 				classSupport={nextPage ? "" : "hide"}
+				size={"large"}
 			/>
 		</section>
 	);

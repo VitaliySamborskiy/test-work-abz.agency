@@ -5,6 +5,7 @@ type Button = {
 	type?: "button" | "submit" | "reset";
 	label?: string;
 	classSupport?: string | null;
+	size?: string;
 };
 
 export type { Button };
