@@ -1,0 +1,49 @@
+.card,
+.textBlock,
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card,
+.title,
+.phone,
+.email,
+.position,
+.textBlock,
+.contact {
+	width: 100%;
+}
+
+.card {
+	max-width: 370px;
+	background: $white-100;
+	padding: 20px;
+	border-radius: 10px;
+	gap: 20px;
+
+	@include breakpoints-max-width(sm) {
+		max-width: 560px;
+	}
+}
+
+.title,
+.phone,
+.email,
+.position {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.avatar {
+	border-radius: 100%;
+}
+
+.title {
+	font-size: $font-size-text;
+	line-height: $font-line-height-text;
+}
