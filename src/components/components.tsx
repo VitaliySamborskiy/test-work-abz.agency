@@ -3,3 +3,6 @@ export { Header } from "./header/header.tsx";
 export { BaseButton } from "./button/baseButton.tsx";
 export { StaffProfiles } from "./staff-profiles/staffProfiles.tsx";
 export { Card } from "./card/card.tsx";
+export { Registration } from "./registration/registration.tsx";
+export { RadioInput } from "./radio-input/radioInput.tsx";
+export { Input } from "./input/input.tsx";
