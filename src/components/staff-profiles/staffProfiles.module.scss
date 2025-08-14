@@ -1,0 +1,41 @@
+.staffSection {
+	padding: 0;
+	margin-top: 143px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+
+	@include breakpoints-max-width(xl) {
+		padding: 0 60px;
+	}
+
+	@include breakpoints-max-width(md) {
+		padding: 0 32px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		padding: 0 16px;
+	}
+}
+
+.title {
+	text-align: center;
+}
+
+.bodyCards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 29px;
+	width: 100%;
+
+	@include breakpoints-max-width(md) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+}
