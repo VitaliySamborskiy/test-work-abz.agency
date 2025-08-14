@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import type { User } from "../../ts/types/user-type.ts";
+import type { CardPropsType } from "./types/type.ts";
 
 import style from "./card.module.scss";
 
-const Card: React.FC<User> = user => {
+const Card: React.FC<CardPropsType> = ({ user }) => {
 	return (
 		<article>
 			<img
