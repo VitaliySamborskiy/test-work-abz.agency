@@ -1,0 +1,35 @@
+.registration,
+.inputBlock,
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.registration {
+	padding: 0;
+	margin-top: 140px;
+}
+
+.form,
+.inputBlock {
+	width: 100%;
+}
+
+.inputBlock {
+	padding-top: 50px;
+	gap: 30px;
+}
+
+.radioBlock {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	width: 100%;
+	max-width: 380px;
+}
+
+.radioInputsTitle {
+	margin-bottom: 11px;
+}
