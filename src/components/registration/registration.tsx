@@ -7,10 +7,10 @@ import type { FormValues } from "../../ts/types/form-registrarion-value.ts";
 
 import { EndPointEnum } from "../../ts/enum/end-point-enum.ts";
 
-import { RadioInput, Input, BaseButton } from "../components.tsx";
+import { RadioInput, Input, BaseButton, InputPhoto } from "../components.tsx";
 
 import { apiRequest } from "../../ts/api";
-import { formFieldsConfig } from "../../configs/form-fields-config.ts";
+import { formFieldsConfig, formFieldsPhotoConfig } from "../../configs/form-fields-config.ts";
 
 import style from "./registration.module.scss";
 
@@ -23,13 +23,12 @@ const Registration: React.FC = () => {
 		control,
 		formState: { errors, isValid },
 	} = useForm<FormValues>({
-		mode: "onChange",
+		mode: "all",
 	});
 
 	useEffect(() => {
 		apiRequest<PositionsResponse>({ endpoint: EndPointEnum.POSITIONS }).then(response => {
 			setPositions(response.positions);
-			console.log(positions);
 		});
 	}, []);
 
@@ -58,13 +57,23 @@ const Registration: React.FC = () => {
 					))}
 				</fieldset>
 				<fieldset className={style.radioBlock}>
-					<legend>Select your position</legend>
+					<legend className={style.radioInputsTitle}>Select your position</legend>
 					{positions.map(position => (
 						<RadioInput
 							position={position}
+							register={register("position", { required: "Please select your position" })}
 							key={position.name}
 						/>
 					))}
+				</fieldset>
+				<fieldset>
+					<InputPhoto
+						label={formFieldsPhotoConfig.label}
+						id={formFieldsPhotoConfig.name}
+						type={formFieldsPhotoConfig.type}
+						register={register(formFieldsPhotoConfig.name, formFieldsPhotoConfig.rules)}
+						error={errors[formFieldsPhotoConfig.name]?.message}
+					/>
 				</fieldset>
 				<BaseButton
 					text={"Sign up"}

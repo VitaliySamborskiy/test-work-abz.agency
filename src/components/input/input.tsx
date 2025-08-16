@@ -42,9 +42,8 @@ const Input = <T extends FieldValues = FieldValues>({
 							onFocus={() => setFocus(true)}
 							onBlur={() => setFocus(false)}
 							onAccept={(value: string) => {
-								const rawValue = value.replace(/\D/g, ""); // залишаємо лише цифри
-								register.onChange({ target: { value: rawValue } } as any);
-								setIsValue(!!rawValue);
+								field.onChange(value);
+								setIsValue(!!value.replace(/\D/g, ""));
 							}}
 						/>
 					)}></Controller>

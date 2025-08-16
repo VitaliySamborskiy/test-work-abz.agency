@@ -39,4 +39,13 @@ const formFieldsConfig: FieldConfig[] = [
 	},
 ];
 
-export { formFieldsConfig };
+const formFieldsPhotoConfig: FieldConfig = {
+	name: "photo",
+	label: "Upload your photo",
+	type: "file",
+	rules: {
+		required: "Photo is required",
+	},
+};
+
+export { formFieldsConfig, formFieldsPhotoConfig };
