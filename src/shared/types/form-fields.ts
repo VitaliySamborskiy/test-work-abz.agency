@@ -9,4 +9,9 @@ type FieldConfig = {
 	rules?: RegisterOptions<FormValues, keyof FormValues>;
 };
 
-export type { FieldConfig };
+type FieldConfigFile = Omit<FieldConfig, "rules"> & {
+	rules: RegisterOptions<FormValues, keyof FormValues> | undefined;
+	accept: string;
+};
+
+export type { FieldConfig, FieldConfigFile };

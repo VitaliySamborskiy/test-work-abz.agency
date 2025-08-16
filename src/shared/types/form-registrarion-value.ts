@@ -3,7 +3,7 @@ type FormValues = {
 	email: string;
 	phone: string;
 	position: string;
-	photo: string;
+	photo: FileList;
 };
 
 export type { FormValues };

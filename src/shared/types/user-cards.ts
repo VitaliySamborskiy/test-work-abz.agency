@@ -1,4 +1,4 @@
-import type { User } from "../types/user-type.ts";
+import type { User } from "./user-type.ts";
 
 type UserCardsType = {
 	next_url: string | null;
