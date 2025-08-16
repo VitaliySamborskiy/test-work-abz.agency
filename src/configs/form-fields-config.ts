@@ -1,4 +1,5 @@
-import type { FieldConfig } from "../ts/types/form-fields.ts";
+import type { FieldConfig, FieldConfigFile } from "../shared/types/form-fields.ts";
+import { validatePhoto } from "../shared/validators/photo-validators.ts";
 
 const formFieldsConfig: FieldConfig[] = [
 	{
@@ -39,12 +40,16 @@ const formFieldsConfig: FieldConfig[] = [
 	},
 ];
 
-const formFieldsPhotoConfig: FieldConfig = {
+const formFieldsPhotoConfig: FieldConfigFile = {
 	name: "photo",
 	label: "Upload your photo",
 	type: "file",
+	accept: " .jpg, .jpeg",
 	rules: {
 		required: "Photo is required",
+		validate: {
+			fileType: validatePhoto,
+		},
 	},
 };
 

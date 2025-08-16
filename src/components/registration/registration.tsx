@@ -2,14 +2,14 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-import type { Position, PositionsResponse } from "../../ts/types/positions-type.ts";
-import type { FormValues } from "../../ts/types/form-registrarion-value.ts";
+import type { Position, PositionsResponse } from "../../shared/types/positions-type.ts";
+import type { FormValues } from "../../shared/types/form-registrarion-value.ts";
 
-import { EndPointEnum } from "../../ts/enum/end-point-enum.ts";
+import { EndPointEnum } from "../../shared/enum/end-point-enum.ts";
 
-import { RadioInput, Input, BaseButton, InputPhoto } from "../components.tsx";
+import { RadioInput, Input, BaseButton, InputFile } from "../components.tsx";
 
-import { apiRequest } from "../../ts/api";
+import { apiRequest } from "../../shared/api";
 import { formFieldsConfig, formFieldsPhotoConfig } from "../../configs/form-fields-config.ts";
 
 import style from "./registration.module.scss";
@@ -33,7 +33,8 @@ const Registration: React.FC = () => {
 	}, []);
 
 	const onSubmit = (data: FormValues) => {
-		console.log(data);
+		console.log("Raw form data:", data);
+		console.log("Photo files count:", data.photo?.length || 0);
 	};
 
 	return (
@@ -66,11 +67,12 @@ const Registration: React.FC = () => {
 						/>
 					))}
 				</fieldset>
-				<fieldset>
-					<InputPhoto
+				<fieldset className={style.inputBlock}>
+					<InputFile
 						label={formFieldsPhotoConfig.label}
 						id={formFieldsPhotoConfig.name}
 						type={formFieldsPhotoConfig.type}
+						accept={formFieldsPhotoConfig.accept}
 						register={register(formFieldsPhotoConfig.name, formFieldsPhotoConfig.rules)}
 						error={errors[formFieldsPhotoConfig.name]?.message}
 					/>

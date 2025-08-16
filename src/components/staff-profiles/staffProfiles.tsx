@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 
 import { BaseButton, Card } from "../components.tsx";
 
-import type { ResponseUsersType } from "../../ts/types/response-users-type.ts";
-import type { User } from "../../ts/types/user-type.ts";
+import type { ResponseUsersType } from "../../shared/types/response-users-type.ts";
+import type { User } from "../../shared/types/user-type.ts";
 
-import { apiRequest } from "../../ts/api";
-import { userMapper } from "../../ts/mappers/user-mapper.ts";
+import { apiRequest } from "../../shared/api";
+import { userMapper } from "../../shared/mappers/user-mapper.ts";
 
 import style from "./staffProfiles.module.scss";
 

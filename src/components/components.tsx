@@ -6,4 +6,4 @@ export { Card } from "./card/card.tsx";
 export { Registration } from "./registration/registration.tsx";
 export { RadioInput } from "./radio-input/radioInput.tsx";
 export { Input } from "./input/input.tsx";
-export { InputPhoto } from "./input-photo/inputPhoto.tsx";
+export { InputFile } from "./input-photo/inputFile.tsx";

@@ -7,7 +7,7 @@
 }
 
 .registration {
-	padding: 0;
+	padding: 0 0 100px;
 	margin-top: 140px;
 }
 
@@ -19,6 +19,10 @@
 .inputBlock {
 	padding-top: 50px;
 	gap: 30px;
+
+	&:last-of-type {
+		padding-bottom: 28px;
+	}
 }
 
 .radioBlock {

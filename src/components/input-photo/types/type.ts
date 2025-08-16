@@ -4,6 +4,7 @@ type InputPhotoProps = {
 	label: string;
 	id: string;
 	type: string;
+	accept: string;
 	register: UseFormRegisterReturn;
 	error?: string;
 };
