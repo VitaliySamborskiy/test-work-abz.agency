@@ -7,3 +7,4 @@ export { Registration } from "./sections/registration/registration.tsx";
 export { RadioInput } from "./forms/radio-input/radioInput.tsx";
 export { Input } from "./forms/input/input.tsx";
 export { InputFile } from "./forms/input-photo/inputFile.tsx";
+export { Preloader } from "./ui/preloader/preloader.tsx";

@@ -16,7 +16,7 @@ import type { ErrorResponse } from "../../../shared/types/response-error.ts";
 
 import { EndPointEnum } from "../../../shared/enum/end-point-enum.ts";
 
-import { RadioInput, Input, BaseButton, InputFile } from "../../components.tsx";
+import { RadioInput, Input, BaseButton, InputFile, Preloader } from "../../components.tsx";
 
 import { apiRequest } from "../../../shared/api";
 import { formFieldsConfig, formFieldsPhotoConfig } from "../../../configs/form-fields-config.ts";
@@ -28,6 +28,7 @@ import style from "./registration.module.scss";
 const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => {
 	const [positions, setPositions] = useState<Position[]>([]);
 	const [isSent, setIsSent] = useState<boolean>(false);
+	const [isLoad, setIsLoad] = useState<boolean>(true);
 
 	const {
 		register,
@@ -84,6 +85,8 @@ const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => 
 		} catch (error) {
 			const err = error as AxiosError<ErrorResponse>;
 			Notify.failure(err.message);
+		} finally {
+			setIsLoad(false);
 		}
 	};
 
@@ -125,6 +128,7 @@ const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => 
 					</fieldset>
 					<fieldset className={style.radioBlock}>
 						<legend className={style.radioInputsTitle}>Select your position</legend>
+						<Preloader isLoading={isLoad} />
 						{positions.map(position => (
 							<RadioInput
 								position={position}

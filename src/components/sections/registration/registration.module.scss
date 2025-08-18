@@ -34,12 +34,14 @@
 }
 
 .radioBlock {
+	position: relative;
 	margin-top: 25px;
 	display: flex;
 	flex-direction: column;
 	gap: 7px;
 	width: 100%;
 	max-width: 380px;
+	min-height: 162px;
 }
 
 .radioInputsTitle {
