@@ -4,9 +4,9 @@ import { Controller, type Path } from "react-hook-form";
 import { IMaskInput } from "react-imask";
 
 import type { FieldValues } from "react-hook-form";
-import styles from "./input.module.scss";
-
 import type { InputProps } from "./types/type.ts";
+
+import styles from "./input.module.scss";
 
 const Input = <T extends FieldValues = FieldValues>({
 	type,
