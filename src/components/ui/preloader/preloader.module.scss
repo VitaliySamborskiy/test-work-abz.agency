@@ -1,0 +1,26 @@
+.loaderOverley {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $white-100;
+	z-index: 3;
+	border-radius: 10px;
+	backdrop-filter: blur(1px);
+}
+
+.loaderSpine {
+	width: 48px;
+	height: 48px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

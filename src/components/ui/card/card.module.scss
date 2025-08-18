@@ -17,6 +17,7 @@
 }
 
 .card {
+	position: relative;
 	background: $white-100;
 	padding: 20px;
 	border-radius: 10px;
@@ -41,4 +42,13 @@
 .title {
 	font-size: $font-size-text;
 	line-height: $font-line-height-text;
+}
+
+.tooltip {
+	position: fixed;
+	padding: 3px 16px;
+	color: $white-100;
+	background: $black-100;
+	border-radius: 4px;
+	z-index: 10;
 }
