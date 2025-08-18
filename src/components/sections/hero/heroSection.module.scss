@@ -1,12 +1,14 @@
 .section {
 	position: relative;
-	padding: 60px 0 0;
+	padding-top: 60px;
 }
 
 .heroImgWrapper {
 	position: relative;
 	z-index: -1;
 	aspect-ratio: 16/8.9;
+	max-width: 1170px;
+	margin: 0 auto;
 
 	@include breakpoints-max-width(lg) {
 		aspect-ratio: 14.2/9;

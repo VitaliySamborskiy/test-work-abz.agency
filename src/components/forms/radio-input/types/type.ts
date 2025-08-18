@@ -1,4 +1,4 @@
-import type { Position } from "../../../shared/types/positions-type.ts";
+import type { Position } from "../../../../shared/types/positions-type.ts";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
 type RadioInputProps = {

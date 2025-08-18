@@ -25,17 +25,15 @@
 
 .bodyCards {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 29px;
 	width: 100%;
 
 	@include breakpoints-max-width(md) {
-		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
 	}
 
 	@include breakpoints-max-width(sm) {
-		grid-template-columns: 1fr;
 		gap: 20px;
 	}
 }

@@ -11,7 +11,6 @@ const RadioInput: React.FC<RadioInputProps> = ({ position, register }) => {
 				className={style.label}
 				htmlFor={position.name}>
 				<input
-					className={style.radio}
 					type="radio"
 					id={position.name}
 					value={position.id}

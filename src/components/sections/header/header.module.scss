@@ -10,19 +10,6 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0;
-
-	@include breakpoints-max-width(lg) {
-		padding: 0 60px;
-	}
-
-	@include breakpoints-max-width(md) {
-		padding: 0 32px;
-	}
-
-	@include breakpoints-max-width(sm) {
-		padding: 0 16px;
-	}
 }
 
 ul {

@@ -28,6 +28,12 @@ legend {
 	line-height: $font-line-height-text;
 }
 
+a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 h1,
 h2,
 h3,
@@ -45,7 +51,19 @@ h6 {
 	max-width: 1170px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 0;
+
+	@include breakpoints-max-width(xl) {
+		padding: 0 60px;
+	}
+
+	@include breakpoints-max-width(md) {
+		padding: 0 32px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		padding: 0 16px;
+	}
 }
 
 .hide {

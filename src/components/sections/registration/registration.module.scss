@@ -7,12 +7,8 @@
 }
 
 .registration {
-	padding: 0 0 100px;
 	margin-top: 140px;
-
-	@include breakpoints-max-width(sm) {
-		padding: 0 16px;
-	}
+	padding-bottom: 100px;
 }
 
 .form,

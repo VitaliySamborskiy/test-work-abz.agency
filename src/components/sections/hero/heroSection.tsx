@@ -1,14 +1,14 @@
 import * as React from "react";
 
-import style from "./heroSection.module.scss";
-import heroImage from "../../assets/img/pexels-alexandr-podvalny-1227513.jpeg";
+import heroImage from "../../../assets/img/pexels-alexandr-podvalny-1227513.webp";
 
-import { BaseButton } from "../components.tsx";
+import style from "./heroSection.module.scss";
+import styleButton from "../../ui/button/button.module.scss";
 
 const HeroSection: React.FC = () => {
 	return (
 		<section
-			className={`${style.section} container`}
+			className={style.section}
 			aria-label="hero section describing what this website is about">
 			<aside
 				className={style.heroImgWrapper}
@@ -31,10 +31,12 @@ const HeroSection: React.FC = () => {
 					with accessibility in mind. They should also be excited to learn, as the world of
 					Front-End Development keeps evolving.
 				</p>
-				<BaseButton
-					text={"Sign up"}
-					type={"submit"}
-				/>
+				<a
+					href={"#registration"}
+					className={styleButton.btn}
+					aria-label="Scroll to sign up section">
+					Sign up
+				</a>
 			</div>
 		</section>
 	);
