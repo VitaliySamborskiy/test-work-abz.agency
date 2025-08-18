@@ -16,4 +16,4 @@ type ValidateResponse = {
 
 type UserErrorResponseType = ErrorResponse | ValidateResponse;
 
-export type { UserErrorResponseType, SuccessResponse };
+export type { UserErrorResponseType, SuccessResponse, ValidateResponse };

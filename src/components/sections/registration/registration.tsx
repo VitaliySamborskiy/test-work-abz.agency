@@ -21,10 +21,13 @@ import { RadioInput, Input, BaseButton, InputFile } from "../../components.tsx";
 import { apiRequest } from "../../../shared/api";
 import { formFieldsConfig, formFieldsPhotoConfig } from "../../../configs/form-fields-config.ts";
 
+import successImg from "../../../assets/img/success-image.svg";
+
 import style from "./registration.module.scss";
 
 const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => {
 	const [positions, setPositions] = useState<Position[]>([]);
+	const [isSent, setIsSent] = useState<boolean>(false);
 
 	const {
 		register,
@@ -59,10 +62,11 @@ const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => 
 			});
 
 			setReloadTrigger(prev => prev + 1);
+			setIsSent(true);
 			Notify.success(response.message);
 		} catch (error) {
 			const err = error as AxiosError<UserErrorResponseType>;
-			console.log(err);
+
 			if (err.response) {
 				Notify.failure(err.response.data.message);
 			} else {
@@ -91,51 +95,61 @@ const Registration: React.FC<RegistrationPropsType> = ({ setReloadTrigger }) => 
 		<section
 			className={`container ${style.registration}`}
 			id="registration">
-			<h2 className={style.title}>Working with POST request</h2>
-			<form
-				className={style.form}
-				onSubmit={handleSubmit(onSubmit)}>
-				<fieldset className={style.inputBlock}>
-					{formFieldsConfig.map(field => (
-						<Input<FormValues>
-							key={field.name}
-							type={field.type}
-							id={field.name}
-							label={field.label}
-							buttonText={field.buttonText}
-							register={register(field.name, field.rules)}
-							error={errors[field.name]?.message}
-							rulesController={field.type === "tel" ? field.rules : undefined}
-							control={field.type === "tel" ? control : undefined}
-						/>
-					))}
-				</fieldset>
-				<fieldset className={style.radioBlock}>
-					<legend className={style.radioInputsTitle}>Select your position</legend>
-					{positions.map(position => (
-						<RadioInput
-							position={position}
-							register={register("position_id", { required: "Please select your position" })}
-							key={position.name}
-						/>
-					))}
-				</fieldset>
-				<fieldset className={style.inputBlock}>
-					<InputFile
-						label={formFieldsPhotoConfig.label}
-						id={formFieldsPhotoConfig.name}
-						type={formFieldsPhotoConfig.type}
-						accept={formFieldsPhotoConfig.accept}
-						register={register(formFieldsPhotoConfig.name, formFieldsPhotoConfig.rules)}
-						error={errors[formFieldsPhotoConfig.name]?.message}
-					/>
-				</fieldset>
-				<BaseButton
-					text={"Sign up"}
-					type={"submit"}
-					disabled={!isValid}
+			<h2 className={style.title}>
+				{isSent ? "User successfully registered" : "Working with POST request"}
+			</h2>
+			{isSent ? (
+				<img
+					src={successImg}
+					alt="User successfully registered"
+					className={style.img}
 				/>
-			</form>
+			) : (
+				<form
+					className={style.form}
+					onSubmit={handleSubmit(onSubmit)}>
+					<fieldset className={style.inputBlock}>
+						{formFieldsConfig.map(field => (
+							<Input<FormValues>
+								key={field.name}
+								type={field.type}
+								id={field.name}
+								label={field.label}
+								buttonText={field.buttonText}
+								register={register(field.name, field.rules)}
+								error={errors[field.name]?.message}
+								rulesController={field.type === "tel" ? field.rules : undefined}
+								control={field.type === "tel" ? control : undefined}
+							/>
+						))}
+					</fieldset>
+					<fieldset className={style.radioBlock}>
+						<legend className={style.radioInputsTitle}>Select your position</legend>
+						{positions.map(position => (
+							<RadioInput
+								position={position}
+								register={register("position_id", { required: "Please select your position" })}
+								key={position.name}
+							/>
+						))}
+					</fieldset>
+					<fieldset className={style.inputBlock}>
+						<InputFile
+							label={formFieldsPhotoConfig.label}
+							id={formFieldsPhotoConfig.name}
+							type={formFieldsPhotoConfig.type}
+							accept={formFieldsPhotoConfig.accept}
+							register={register(formFieldsPhotoConfig.name, formFieldsPhotoConfig.rules)}
+							error={errors[formFieldsPhotoConfig.name]?.message}
+						/>
+					</fieldset>
+					<BaseButton
+						text={"Sign up"}
+						type={"submit"}
+						disabled={!isValid}
+					/>
+				</form>
+			)}
 		</section>
 	);
 };

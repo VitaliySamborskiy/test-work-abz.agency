@@ -33,7 +33,7 @@ const formFieldsConfig: FieldConfig[] = [
 		rules: {
 			required: "Phone is required",
 			pattern: {
-				value: /^\+38\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/,
+				value: /^\+38\s\(0\d{2}\)\s\d{3}\s\d{2}\s\d{2}$/,
 				message: "Invalid phone format",
 			},
 		},
