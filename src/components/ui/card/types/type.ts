@@ -1,4 +1,4 @@
-import type { User } from "../../../shared/types/user-type.ts";
+import type { User } from "../../../../shared/types/user-type.ts";
 
 type CardPropsType = {
 	user: User;

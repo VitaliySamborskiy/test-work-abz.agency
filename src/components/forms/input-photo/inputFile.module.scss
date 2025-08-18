@@ -1,6 +1,10 @@
-.block {
+.block,
+.inputWrapper {
 	position: relative;
 	display: flex;
+}
+
+.block {
 	flex-direction: column;
 	width: 100%;
 	max-width: 380px;
@@ -8,14 +12,11 @@
 }
 
 .inputWrapper {
-	display: flex;
 	align-items: center;
-	position: relative;
 	padding: 14px 16px 14px 99px;
 	border-radius: 4px;
 	border: 1px solid $gray-300;
 	height: 57px;
-	overflow: hidden;
 }
 
 .file {

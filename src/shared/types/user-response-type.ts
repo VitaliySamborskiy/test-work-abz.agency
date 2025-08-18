@@ -9,7 +9,9 @@ type SuccessResponse = {
 type ValidateResponse = {
 	success: boolean;
 	message: string;
-	fails: Record<string, string[]>;
+	fails: {
+		[field: string]: string[];
+	};
 };
 
 type UserErrorResponseType = ErrorResponse | ValidateResponse;

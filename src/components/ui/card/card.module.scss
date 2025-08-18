@@ -17,15 +17,10 @@
 }
 
 .card {
-	max-width: 370px;
 	background: $white-100;
 	padding: 20px;
 	border-radius: 10px;
 	gap: 20px;
-
-	@include breakpoints-max-width(sm) {
-		max-width: 560px;
-	}
 }
 
 .title,
