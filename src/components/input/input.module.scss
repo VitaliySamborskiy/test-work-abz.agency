@@ -1,0 +1,57 @@
+.inputBlock {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 380px;
+	height: 73px;
+}
+
+.buttonText,
+.label {
+	color: $gray-400;
+}
+
+.buttonText,
+.error,
+.labelFocus {
+	font-size: $font-size-small;
+	line-height: $font-line-height-small;
+}
+
+.label {
+	position: absolute;
+	padding: 0 4px;
+	top: 14px;
+	left: 16px;
+	transition:
+		top 0.3s ease-in-out,
+		font-size 0.3s ease-in-out,
+		line-height 0.3s ease-in-out;
+}
+
+.labelFocus {
+	top: -6px;
+	background: $gray-100;
+}
+
+.input {
+	padding: 14px 16px;
+	border-radius: 4px;
+	border: 1px solid $gray-300;
+}
+
+.buttonText,
+.error {
+	padding: 4px 0 0 16px;
+}
+
+.errorInput {
+	border-color: $red-100;
+	border-width: 2px;
+}
+
+.error,
+.errorLabel {
+	color: $red-100;
+}

@@ -1,0 +1,58 @@
+.block {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 380px;
+	height: 88px;
+}
+
+.inputWrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 14px 16px 14px 99px;
+	border-radius: 4px;
+	border: 1px solid $gray-300;
+	height: 57px;
+	overflow: hidden;
+}
+
+.file {
+	display: none;
+}
+
+.updateButton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 14px 15px;
+	border: 1px solid $black-100;
+	border-radius: 4px 0 0 4px;
+}
+
+.textFileName {
+	color: $gray-400;
+}
+
+.nameFile {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.errorInput,
+.errorUpdateButton {
+	border-color: $red-100;
+	border-width: 2px;
+}
+
+.errorUpdateButton {
+	top: -2px;
+	left: -2px;
+}
+
+.error {
+	padding: 4px 0 0 16px;
+	color: $red-100;
+}

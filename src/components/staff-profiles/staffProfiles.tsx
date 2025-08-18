@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 
 import { BaseButton, Card } from "../components.tsx";
 
-import type { ResponseUsersType } from "../../ts/types/response-users-type.ts";
-import type { User } from "../../ts/types/user-type.ts";
+import type { ResponseUsersType } from "../../shared/types/response-users-type.ts";
+import type { User } from "../../shared/types/user-type.ts";
+import type { StaffProfilesProps } from "./types/type.ts";
 
-import { apiRequest } from "../../ts/api";
-import { userMapper } from "../../ts/mappers/user-mapper.ts";
+import { apiRequest } from "../../shared/api";
+import { userMapper } from "../../shared/mappers/user-mapper.ts";
 
 import style from "./staffProfiles.module.scss";
 
-const StaffProfiles: React.FC = () => {
+const StaffProfiles: React.FC<StaffProfilesProps> = ({ reloadTrigger }) => {
 	const [users, setUsers] = useState<User[]>([]);
 	const [page, setPage] = useState<number>(0);
 	const [nextPage, setNextPage] = useState<string | null>("");
@@ -38,7 +39,8 @@ const StaffProfiles: React.FC = () => {
 				setUsers(handleApiResponse(response));
 			}
 		);
-	}, []);
+		console.log("Reload trigger:", reloadTrigger);
+	}, [reloadTrigger]);
 
 	return (
 		<section className={`${style.staffSection} container`}>

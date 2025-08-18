@@ -4,9 +4,6 @@ import { Notify } from "notiflix";
 
 const api = axios.create({
 	baseURL: "https://frontend-test-assignment-api.abz.agency/api/v1",
-	headers: {
-		"Content-Type": "application/json",
-	},
 });
 
 async function apiRequest<T>({

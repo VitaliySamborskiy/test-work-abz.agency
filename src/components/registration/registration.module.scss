@@ -1,0 +1,47 @@
+.registration,
+.inputBlock,
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.registration {
+	padding: 0 0 100px;
+	margin-top: 140px;
+
+	@include breakpoints-max-width(sm) {
+		padding: 0 16px;
+	}
+}
+
+.form,
+.inputBlock {
+	width: 100%;
+}
+
+.title {
+	text-align: center;
+}
+
+.inputBlock {
+	padding-top: 50px;
+	gap: 30px;
+
+	&:last-of-type {
+		padding-bottom: 13px;
+	}
+}
+
+.radioBlock {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	width: 100%;
+	max-width: 380px;
+}
+
+.radioInputsTitle {
+	margin-bottom: 11px;
+}
