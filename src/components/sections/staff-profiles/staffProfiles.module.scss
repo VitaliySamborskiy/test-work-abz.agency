@@ -24,10 +24,12 @@
 }
 
 .bodyCards {
+	position: relative;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 29px;
 	width: 100%;
+	min-height: 537px;
 
 	@include breakpoints-max-width(md) {
 		gap: 16px;

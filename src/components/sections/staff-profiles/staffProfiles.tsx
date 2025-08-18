@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { Notify } from "notiflix";
 
-import { BaseButton, Card } from "../../components.tsx";
+import { BaseButton, Card, Preloader } from "../../components.tsx";
 
 import type { ResponseUsersType } from "../../../shared/types/response-users-type.ts";
 import type { User } from "../../../shared/types/user-type.ts";
@@ -20,6 +20,7 @@ const StaffProfiles: React.FC<StaffProfilesProps> = ({ reloadTrigger }) => {
 	const [users, setUsers] = useState<User[]>([]);
 	const [page, setPage] = useState<number>(0);
 	const [nextPage, setNextPage] = useState<string | null>("");
+	const [isLoad, setIsLoad] = useState<boolean>(true);
 
 	const handleApiResponse = (response: ResponseUsersType): User[] => {
 		const result = userMapper(response);
@@ -61,6 +62,8 @@ const StaffProfiles: React.FC<StaffProfilesProps> = ({ reloadTrigger }) => {
 			} else {
 				Notify.failure(err.message);
 			}
+		} finally {
+			setIsLoad(false);
 		}
 	};
 
@@ -74,6 +77,7 @@ const StaffProfiles: React.FC<StaffProfilesProps> = ({ reloadTrigger }) => {
 			id="users">
 			<h2 className={style.title}>Working with GET request</h2>
 			<div className={style.bodyCards}>
+				<Preloader isLoading={isLoad} />
 				{users?.map(item => (
 					<Card
 						key={item.id}
@@ -87,6 +91,7 @@ const StaffProfiles: React.FC<StaffProfilesProps> = ({ reloadTrigger }) => {
 				onClick={handleLoadPage}
 				classSupport={nextPage ? "" : "hide"}
 				size={"large"}
+				disabled={isLoad}
 			/>
 		</section>
 	);
