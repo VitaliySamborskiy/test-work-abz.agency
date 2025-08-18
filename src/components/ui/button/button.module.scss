@@ -1,0 +1,19 @@
+.btn {
+	background: $yellow-300;
+	border-radius: 80px;
+	height: 34px;
+	width: 100px;
+	transition: background 0.5s ease-in-out;
+
+	&:hover {
+		background: $yellow-200;
+	}
+
+	&:disabled {
+		background: $gray-200;
+	}
+}
+
+.btnLarge {
+	width: 120px;
+}

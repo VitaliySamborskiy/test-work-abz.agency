@@ -1,0 +1,69 @@
+.section {
+	position: relative;
+	padding-top: 60px;
+}
+
+.heroImgWrapper {
+	position: relative;
+	z-index: -1;
+	aspect-ratio: 16/8.9;
+	max-width: 1170px;
+	margin: 0 auto;
+
+	@include breakpoints-max-width(lg) {
+		aspect-ratio: 14.2/9;
+	}
+
+	@include breakpoints-max-width(md) {
+		aspect-ratio: 13.9/9;
+	}
+
+	@include breakpoints-max-width(sm) {
+		aspect-ratio: 6.5/9;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: $black-500;
+	}
+}
+
+.heroImg {
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+}
+
+.textBlock {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 380px;
+	top: 54%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	@include breakpoints-max-width(md) {
+		top: 56%;
+	}
+
+	@include breakpoints-max-width(sm) {
+		width: 90%;
+		top: 53%;
+	}
+}
+
+.heroTitle,
+.heroText {
+	color: $white-100;
+	text-align: center;
+}
+
+.heroText {
+	padding: 21px 0 32px;
+}

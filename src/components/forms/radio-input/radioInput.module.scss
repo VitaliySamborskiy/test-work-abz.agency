@@ -1,0 +1,39 @@
+.label {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	cursor: pointer;
+}
+
+.radioCustom,
+.radioCustom::after {
+	border-radius: 100%;
+}
+
+.radioCustom {
+	display: flex;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border: 1px solid $gray-300;
+	transition: border-color 0.3s ease-in-out;
+}
+
+.radioCustom::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	transform: translate(-50%, -50%);
+	transition: background 0.3s ease-in-out;
+}
+
+.label input[type="radio"]:checked + .radioCustom {
+	border-color: $blue-300;
+}
+
+.label input[type="radio"]:checked + .radioCustom::after {
+	background: $blue-300;
+}

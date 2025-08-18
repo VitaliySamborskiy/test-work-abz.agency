@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: $gray-100;
+	height: 100%;
+}
+
+p,
+span,
+input,
+a,
+button,
+label,
+legend {
+	color: $black-900;
+	font-size: $font-size-text;
+	font-family: $font-family, sans-serif;
+	font-weight: $weight-normal;
+	line-height: $font-line-height-text;
+}
+
+a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family;
+	color: $black-900;
+	font-size: $font-size-title;
+	font-weight: $weight-normal;
+	line-height: $font-line-height-title;
+}
+
+.container {
+	max-width: 1170px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 0;
+
+	@include breakpoints-max-width(xl) {
+		padding: 0 60px;
+	}
+
+	@include breakpoints-max-width(md) {
+		padding: 0 32px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		padding: 0 16px;
+	}
+}
+
+.hide {
+	display: none;
+}
