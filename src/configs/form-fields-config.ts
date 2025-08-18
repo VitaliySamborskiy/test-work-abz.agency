@@ -1,9 +1,9 @@
 import type { FieldConfig, FieldConfigFile } from "../shared/types/form-fields.ts";
-import { validatePhoto } from "../shared/validators/photo-validators.ts";
+import { validateMinSize, validatePhoto } from "../shared/validators/photo-validators.ts";
 
 const formFieldsConfig: FieldConfig[] = [
 	{
-		name: "userName",
+		name: "name",
 		label: "Your name",
 		type: "text",
 		rules: {
@@ -49,6 +49,7 @@ const formFieldsPhotoConfig: FieldConfigFile = {
 		required: "Photo is required",
 		validate: {
 			fileType: validatePhoto,
+			sizeMin: validateMinSize,
 		},
 	},
 };

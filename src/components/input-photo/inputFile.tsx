@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import type { InputPhotoProps } from "./types/type.ts";
-import style from "./inputPhoto.module.scss";
+import style from "./inputFile.module.scss";
 
 const InputFile: React.FC<InputPhotoProps> = ({ label, id, type, accept, register, error }) => {
 	const [fileNames, setFileNames] = useState<string>("");
@@ -13,8 +13,8 @@ const InputFile: React.FC<InputPhotoProps> = ({ label, id, type, accept, registe
 	};
 
 	return (
-		<div className={`${style.block} ${error && style.errorInput}`}>
-			<div className={style.inputWrapper}>
+		<div className={style.block}>
+			<div className={`${style.inputWrapper} ${error && style.errorInput}`}>
 				<input
 					className={style.file}
 					type={type}
@@ -24,7 +24,7 @@ const InputFile: React.FC<InputPhotoProps> = ({ label, id, type, accept, registe
 					onChange={handleFileChange}
 				/>
 				<label
-					className={style.updateButton}
+					className={`${style.updateButton} ${error && style.errorUpdateButton}`}
 					htmlFor={id}>
 					Upload
 				</label>

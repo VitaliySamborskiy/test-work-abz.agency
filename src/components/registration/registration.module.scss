@@ -9,6 +9,10 @@
 .registration {
 	padding: 0 0 100px;
 	margin-top: 140px;
+
+	@include breakpoints-max-width(sm) {
+		padding: 0 16px;
+	}
 }
 
 .form,
@@ -16,12 +20,16 @@
 	width: 100%;
 }
 
+.title {
+	text-align: center;
+}
+
 .inputBlock {
 	padding-top: 50px;
 	gap: 30px;
 
 	&:last-of-type {
-		padding-bottom: 28px;
+		padding-bottom: 13px;
 	}
 }
 
