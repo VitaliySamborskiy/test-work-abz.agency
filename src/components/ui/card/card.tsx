@@ -28,6 +28,7 @@ const Card: React.FC<CardPropsType> = ({ user }) => {
 				className={style.avatar}
 				height={70}
 				width={70}
+				loading="lazy"
 			/>
 			<h3 className={style.title}>{user.name}</h3>
 			<div className={style.textBlock}>
