@@ -16,11 +16,11 @@ const HeroSection: React.FC = () => {
 				<img
 					className={style.heroImg}
 					src={heroImage}
-					alt=""
+					alt="background image of a field of cut wheat and sky"
 					width={4256}
 					height={2832}
+					sizes="(max-width: 768px) 100vw, 768px"
 					aria-hidden="true"
-					loading="lazy"
 				/>
 			</aside>
 			<div className={style.textBlock}>
