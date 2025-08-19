@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 		<header>
 			<div className={`${styles.block} container`}>
 				<a
-					href="/"
+					href={"#top"}
 					aria-label="To the main page">
 					<img
 						src={logo}

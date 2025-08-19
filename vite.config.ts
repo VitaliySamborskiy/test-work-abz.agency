@@ -9,6 +9,20 @@ export default defineConfig({
 	},
 	build: {
 		outDir: "dist",
+		minify: "esbuild",
+		target: "esnext",
+		cssCodeSplit: true,
+		sourcemap: false,
+		reportCompressedSize: true,
+
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					react: ["react", "react-dom"],
+					vendors: ["axios", "notiflix", "react-hook-form", "react-imask"],
+				},
+			},
+		},
 	},
 	css: {
 		preprocessorOptions: {
